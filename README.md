@@ -118,3 +118,26 @@ add them (adjustable)
 #on at 10:00
 0 10 * * * /bin/bash /home/max/autojobs/screen.sh
 </pre>
+# Daliy backup server
+* make a file to storage backup file.  
+<pre>mkdir /home/max/mcbackup
+cd /home/max/autojobs
+</pre>
+<code>nano backup.sh</code>  
+put it down  
+<pre>
+#!/bin/bash
+start=$(date +%s)
+echo "start backup"
+cp -r /home/max/MC /home/max/mcbackup
+echo "backup done"
+end=$(date +%s)
+diff=$((end-start))
+echo it takes $diff seconds
+echo and the date is $(date)
+</pre>
+and use crontab  
+<code>crontab -e</code>  
+add it and will backup at 0:05  
+<code>5 0 * * * /bin/bash /home/max/autojobs/backup.sh</code>  
+done
