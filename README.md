@@ -6,7 +6,7 @@ Minecraft java server launch
 * so install some packacge with commands below  
 sudo apt update  
 sudo apt install -y openjdk-17-jdk  
-sudo apt install -y screen  
+sudo apt install -y screen wget
 * now in your MC folder run your launch command start.sh or run.sh to start the server. and it is done starting a server! 
 ## Get your server ip by natfrp tools
 * make some pre-jobs for you 'max'.  
